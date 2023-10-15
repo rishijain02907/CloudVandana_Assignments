@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+#outer{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 162, 255);
+}
+
+h1 {
+    position: absolute;
+    color: white;
+    font-weight: 500;
+    margin: 45px 0 0 520px;
+}
+
+#inner{
+    padding: 25px;
+    height: 550px;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#nameEmail{
+    display: flex;
+}
+
+#emaill{
+    margin-left: 25px;
+}
+
+.no{
+    margin-left: 35px;
+}
+
+.inp{
+    border: .5px solid black;
+}
+
+#txtarea{
+    border: 1px solid black;
+}
+
+#submit{
+    border: none;
+    height: 40px;
+    width: 80px;
+    cursor: pointer;
+    background-color: rgb(0, 162, 255);
+    color: white;
+}
+
+#reset{
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#yes{
+    cursor: pointer;
+}
+
+#no{
+    cursor: pointer;
+}
+
+#satisfied{
+    cursor: pointer;
+}
+

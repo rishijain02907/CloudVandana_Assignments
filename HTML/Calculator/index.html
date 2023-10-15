@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="outer">
+        <div id="inner">
+            <div id="calc">
+                <form id="myForm">
+                    <div id="one">
+                        <input type="text" id="display" readonly>
+                        <button class="btn" id="ac" onclick="clearDisplay()">AC</button>
+                    </div>
+                    <div id="two">
+                        <button class="btn num" onclick="appendToDisplay('9')">9</button>
+                        <button class="btn num" onclick="appendToDisplay('8')">8</button>
+                        <button class="btn num" onclick="appendToDisplay('7')">7</button>
+                        <button class="btn opr" onclick="appendToDisplay('+')">+</button>
+                    </div>
+                    <div id="three">
+                        <button class="btn num" onclick="appendToDisplay('6')">6</button>
+                        <button class="btn num" onclick="appendToDisplay('5')">5</button>
+                        <button class="btn num" onclick="appendToDisplay('4')">4</button>
+                        <button class="btn opr" onclick="appendToDisplay('-')">-</button>
+                    </div>
+                    <div id="four">
+                        <button class="btn num" onclick="appendToDisplay('3')">3</button>
+                        <button class="btn num" onclick="appendToDisplay('2')">2</button>
+                        <button class="btn num" onclick="appendToDisplay('1')">1</button>
+                        <button class="btn opr" onclick="appendToDisplay('/')">/</button>
+                    </div>
+                    <div id="five">
+                        <button class="btn num" onclick="appendToDisplay('.')">.</button>
+                        <button class="btn num" onclick="appendToDisplay('0')">0</button>
+                        <button class="btn num" onclick="calculateResult()">=</button>
+                        <button class="btn opr" onclick="appendToDisplay('*')">x</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+                event.preventDefault(); 
+            });
+
+        function appendToDisplay(val){
+            document.getElementById('display').value +=val;
+        }
+
+        function calculateResult(){
+            var val = document.getElementById('display').value;
+            const result = eval(val);
+            document.getElementById('display').value = result;
+        }
+
+        function clearDisplay(){
+            document.getElementById('display').value = '';
+        }
+    </script>
+</body>
+</html>

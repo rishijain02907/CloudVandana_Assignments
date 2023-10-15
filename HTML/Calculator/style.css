@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+#outer{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+#inner{
+    height: 400px;
+    width: 400px;
+    background-color: lightgray;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#calc{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#display{
+    border: none;
+    padding: 8px;
+    background-color: rgb(255, 255, 255);
+    height: 60px;
+    width: 180px;
+}
+
+#ac{
+    background-color: rgb(0, 126, 110);
+}
+
+#one{
+    display: flex;
+}
+
+#two{
+    display: flex;
+}
+
+#three {
+    display: flex;
+}
+
+#four {
+    display: flex;
+}
+
+#five {
+    display: flex;
+}
+
+.num{
+    background-color: rgb(36, 36, 36);
+}
+
+.opr{
+    background-color: grey;
+}
+
+.btn{
+    color: white;
+    border: none;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+}

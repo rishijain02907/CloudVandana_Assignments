@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Survey Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="outer">
+        <h1>Customer Survey Form</h1>
+        <div id="inner">
+            <form action="#" id="form">
+                <div id="nameEmail">
+                    <div>
+                        <label>Name</label><br>
+                        <input type="text" class="inp" id="name" required>
+                    </div>
+                    <div id="emaill">
+                        <label>Email</label><br>
+                        <input type="text" class="inp" id="email" required>
+                    </div>
+                </div><br>
+                <label>Is this the first time you're using our service?</label><br>
+                <input type="radio" name="choice1" id="yes" required>Yes
+                <input type="radio" name="choice1" class="no" id="no">No <br><br>
+                <label>Would you suggest your friends and colleague?</label><br>
+                <input type="radio" name="choice2" id="yes" required>Yes
+                <input type="radio" name="choice2" class="no" id="no">No <br><br>
+                <label>How satisfied are you with our company over all?</label><br>
+                <input type="radio" name="choice3" id="satisfied" required>Satisfied
+                <input type="radio" name="choice3" class="no" id="satisfied">Undecided
+                <input type="radio" name="choice3" id="satisfied" class="no">Unsatisfied <br><br>
+                <label>Do you have suggestion to imporve our service?</label><br>
+                <textarea id="txtarea" cols="60" rows="6" required></textarea><br>
+                <button id="submit" onclick="summit()">Submit</button> 
+            </form> <p id="reset" onclick="resset()">Click to Reset</p>
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById("form");
+        form.addEventListener("submit", function(event){
+            const select1 = document.querySelector('input[name="choice1"]:checked');
+            const select2 = document.querySelector('input[name="choice2"]:checked');
+            const select3 = document.querySelector('input[name="choice3"]:checked');
+
+            if(!select1 && !select2 && !select3){
+                event.preventDefault();
+                alert("Please select an option");
+            }
+        });
+
+        function summit(){
+            resset();
+        }
+
+        function resset(){
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('txtarea').value = '';
+            unCheckBtn();
+        }
+
+        function unCheckBtn(){
+            const reset = document.getElementById('reset');
+
+            reset.addEventListener('click', function(){
+                const yesNoBtn = document.getElementsByName("choice1");
+                const noYesBtn = document.getElementsByName("choice2");
+                const satisfiedBtn = document.getElementsByName("choice3");
+
+                for(let i=0;i<noYesBtn.length;i++){
+                    noYesBtn[i].checked = false;
+                }
+
+                for(let i=0;i<yesNoBtn.length;i++){
+                    yesNoBtn[i].checked = false;
+                }
+
+                for(let i=0;i<satisfiedBtn.length;i++){
+                    satisfiedBtn[i].checked = false;
+                }
+            })
+        }
+    </script>
+</body>
+</html>
